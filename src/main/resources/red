@@ -1,0 +1,9 @@
+序号	版本对应
+1	<spring-boot.version>2.4.2</spring-boot.version>
+<spring-cloud.version>2020.0.0</spring-cloud.version>
+2	<spring-boot.version>2.4.1</spring-boot.version>
+<spring-cloud.version>2020.0.0-M6</spring-cloud.version>
+3	<spring-boot.version>2.4.0</spring-boot.version>
+<spring-cloud.version>2020.0.0-M6</spring-cloud.version>
+4	<spring-boot.version>2.3.2.RELEASE</spring-boot.version>
+<spring-cloud.version>Greenwich.SR2</spring-cloud.version>
