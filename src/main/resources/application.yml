@@ -1,20 +1,35 @@
 logging:
-    level:
-        com.itranlin.twin: debug
-    file:
-        name: ./logs/common-server.log
+  level:
+    com.twin: debug
+  file:
+    name: ./logs/common-server.log
 server:
-    port: 8098
+  port: 8098
+
 spring:
-    mvc:
-        pathmatch:
-            matching-strategy: ANT_PATH_MATCHER
-    jackson:
-        default-property-inclusion: non_null
-    datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        username: root
-        password: root
-        url: jdbc:mysql://127.0.0.1:3306/twin?useUnicode=yes&characterEncoding=UTF8&useSSL=false&autoReconnect=true&serverTimezone=GMT%2B8&allowMultiQueries=true
-
-
+  application:
+    name: service1
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/twin?useUnicode=yes&characterEncoding=UTF8&useSSL=false&autoReconnect=true&serverTimezone=GMT%2B8&allowMultiQueries=true
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 127.0.0.1:8848  #????????
+      config:
+        file-extension: yaml   #????????????   dataId = application.name  +  file-extension
+        namespace: c8af2522-4b90-4b6e-bdd0-24a91c99f1a7  #????????
+        group: TEST_GROUP
+        refresh-enable: true
+      #??????
+      discovery:
+        namespace: c8af2522-4b90-4b6e-bdd0-24a91c99f1a7
+    sentinel:
+      transport:
+        dashboard: localhost:8080
