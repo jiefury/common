@@ -17,7 +17,7 @@ spring:
         # 作为配置中心的nacos服务器地址，默认值：${spring.cloud.nacos:server-addr}
         #server-addr: 10.0.7.115:18117
         # 配置文件读取的nacos命名空间ID，默认值：public
-        namespace: dc5092c2-8381-47ff-ab81-f4088135cb89
+        namespace: 7a77c089-e04a-4fd4-8c45-55fbd6ab05d6
         # 配置文件在nacos命名空间中的分组，默认值：DEFAULT_GROUP
         group: DEFAULT_GROUP
         # 配置文件的文件前缀（配置文件名称），默认值：${spring.application.name}
@@ -56,4 +56,4 @@ spring:
         # 作为注册中心的nacos服务器地址，默认值：${spring.cloud.nacos:server-addr}
         #server-addr: 10.0.7.115:18117
         # 服务注册在nacso上的命名空间ID，默认值：public
-        namespace: dc5092c2-8381-47ff-ab81-f4088135cb89
+        namespace: 7a77c089-e04a-4fd4-8c45-55fbd6ab05d6
