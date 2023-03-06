@@ -3,6 +3,8 @@ package com.itranlin.twin.utils;
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CommonUtil {
 
@@ -82,18 +84,41 @@ public class CommonUtil {
         System.out.println(localHost.getHostAddress());
         String hostAddress = localHost.getHostAddress();
         System.out.println(ipToLong("117.139.250.162"));
+
+// 过滤特殊字符
+// 只允许字母和数字
+        String regEx = "[^a-zA-Z0-9]";
+// 清除掉所有特殊字符
+        String str = "[`~!#\\$%^&*()+=|{}]+";
+        Pattern p = Pattern.compile(str);
+        String s = "#&112&";
+        boolean matches = s.matches(str);
+        System.out.println(matches);
+        Matcher m = p.matcher(s);
+        boolean b = m.find();
+        System.out.println(b);
+        if (b) {
+            System.out.println(m.group());
+            int i = m.groupCount();
+            for (int j = 0; j <= i; j++) {
+                String group = m.group(j);
+                System.out.println(group);
+            }
+        }
+//        println(m.replaceAll("").trim())
+
     }
 
     public static long ipToLong(String strIp) {
         long[] ip = new long[4];
         String[] sIp = strIp.split("\\.");
         long out = 0;
-        if(sIp.length == 4) {
-            for(int i=0; i<4; i++) {
+        if (sIp.length == 4) {
+            for (int i = 0; i < 4; i++) {
                 ip[i] = Long.parseLong(sIp[i]);
             }
-            out = (ip[0]<<24) + (ip[1]<<16) + (ip[2]<<8) + ip[3];
-        }else {
+            out = (ip[0] << 24) + (ip[1] << 16) + (ip[2] << 8) + ip[3];
+        } else {
             System.out.println("ip地址不合法");
         }
         return out;
