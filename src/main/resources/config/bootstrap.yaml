@@ -1,18 +1,16 @@
-#server:
-#  port: 56010   #启动端口号  命令行注入
-#spring:
-#  application:
-#    name: service1
-#  cloud:
-#    nacos:
-#      username: nacos
-#      password: nacos
-#      server-addr: 127.0.0.1:8848  #配置中心
-#      config:
-#        file-extension: yaml   #配置文件后缀名   dataId = application.name  +  file-extension
-#        namespace: ea8fdc12-3509-472b-b8a9-5145f7e5ce85  #开发环境
-#        group: TEST_GROUP
-#        refresh-enable: true
-#      #测试组
-#      discovery:
-#        namespace: ea8fdc12-3509-472b-b8a9-5145f7e5ce85
+server:
+  port: 8080   #启动端口号  命令行注入
+spring:
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      server-addr: 127.0.0.1:8848  #配置中心
+      config:
+        file-extension: yaml   #配置文件后缀名   dataId = application.name  +  file-extension
+        namespace: ea8fdc12-3509-472b-b8a9-5145f7e5ce85  #开发环境
+        group: TEST_GROUP
+        refresh-enable: true
+      #测试组
+      discovery:
+        namespace: ea8fdc12-3509-472b-b8a9-5145f7e5ce85

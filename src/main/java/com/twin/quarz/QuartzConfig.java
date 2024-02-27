@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.util.Properties;
 
-@Configuration
+//@Configuration
 public class QuartzConfig implements SchedulerFactoryBeanCustomizer {
 
     @Bean

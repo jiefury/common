@@ -3,33 +3,43 @@ logging:
     com.twin: debug
   file:
     name: ./logs/common-server.log
-server:
-  port: 8098
-
+wechat:
+  appId: wxb03d4dfaef607b41
+  secret: 958761c9d70b49787eeeabf99d47ada1
 spring:
   application:
     name: service1
+server:
+  port: 8898
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: root
-    url: jdbc:mysql://127.0.0.1:3306/twin?useUnicode=yes&characterEncoding=UTF8&useSSL=false&autoReconnect=true&serverTimezone=GMT%2B8&allowMultiQueries=true
-  cloud:
-    nacos:
-      username: nacos
-      password: nacos
-      server-addr: 127.0.0.1:8848  #????????
-      config:
-        file-extension: yaml   #????????????   dataId = application.name  +  file-extension
-        namespace: c8af2522-4b90-4b6e-bdd0-24a91c99f1a7  #????????
-        group: TEST_GROUP
-        refresh-enable: true
-      #??????
-      discovery:
-        namespace: c8af2522-4b90-4b6e-bdd0-24a91c99f1a7
-    sentinel:
-      transport:
-        dashboard: localhost:8080
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password: root
+#    url: jdbc:mysql://127.0.0.1:3306/twin?useUnicode=yes&characterEncoding=UTF8&useSSL=false&autoReconnect=true&serverTimezone=GMT%2B8&allowMultiQueries=true
+#  redis:
+#    host: 127.0.0.1
+#    port: 6381
+#    password: 123456
+#    timeout: 10000
+#    lettuce:
+#      pool:
+#        # 连接池中的最大空闲连接
+#        max-idle: 200
+#        # 连接池中的最小空闲连接
+#        min-idle: 1
+#        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+#        max-wait: -1
+#        # 连接池最大连接数（使用负值表示没有限制）
+#        max-active: 200
+#    sentinel:
+#      master: mymaster
+#      nodes: 127.0.0.1:26379,127.0.0.1:26380,127.0.0.1:26381
+#  redis-stream:
+#    key: test001
+#    group: group001
+#user:
+#  age: 10
+#  name: jack
